@@ -1,0 +1,14 @@
+.card-img-container {
+    display: flex;
+    /* flex-wrap: wrap; */
+    justify-content: space-around;
+    align-items: center;
+    overflow: auto;
+
+}
+
+.card-img img {
+    margin: 5px 10px;
+    border-radius: 15px;
+}
+
