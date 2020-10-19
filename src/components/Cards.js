@@ -6,11 +6,7 @@ function Cards({ paths }) {
     <section>
       <div className="card-img-container">
         {paths.map((imgUrl, index) => {
-          return (
-            <div className="card-img" key={index}>
-              <img src={imgUrl} key={index + 1} alt={`card ${index}`} />
-            </div>
-          );
+          return <img src={imgUrl} key={index} alt={`card ${index}`} />;
         })}
       </div>
     </section>
