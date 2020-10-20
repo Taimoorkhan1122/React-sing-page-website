@@ -2,10 +2,10 @@ import React from "react";
 
 function Services() {
   return (
-    <di>
+    <div>
       <h1>Services</h1>
       This is Our Services Sections
-    </di>
+    </div>
   );
 }
 
