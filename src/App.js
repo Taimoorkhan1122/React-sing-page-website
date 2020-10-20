@@ -20,10 +20,10 @@ function App() {
 
   const [thisStat, setThisStat] = useState({
     Home: true,
-    Services: true,
-    Blogs: true,
-    Clients: true,
-    Contact: true,
+    Services: false,
+    Blogs: false,
+    Clients: false,
+    Contact: false,
   });
 
   // const setHomeHandler = () => {
