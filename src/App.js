@@ -1,7 +1,7 @@
 import React from "react";
 import UserIn from "./components/UserIn.js";
 import Navbar from "./components/Navbar.js";
-import Cards from "./components/Cards.js";
+import Home from "./components/Home.js";
 import "./App.css";
 
 function App() {
@@ -15,7 +15,6 @@ function App() {
   ];
   return (
     <div className="App">
-      {/* Start of Header */}
       <header className="App-header">
         <div className="header-container">
           <a href="#home">
@@ -26,8 +25,9 @@ function App() {
         </div>
       </header>
 
+      {/* Our components will update here */}
       <main className="App-main">
-        <Cards paths={cardContent} />
+        <Home content={cardContent} />
       </main>
 
       <footer className="App-footer">This is footer</footer>
