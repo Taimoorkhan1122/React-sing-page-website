@@ -1,23 +1,74 @@
 import React from "react";
 
-function Navbar() {
+function Navbar({ stat, handler }) {
+  console.log(stat, handler);
   return (
     <nav className="navigation" id="navigation">
       <ul>
         <li className="button">
-          <a href="#home">Home</a>
+          <a
+            href="#home"
+            onClick={() => {
+              handler({
+                ...!stat,
+                Home: true,
+              });
+            }}
+          >
+            Home
+          </a>
         </li>
         <li className="button">
-          <a href="#services">Services</a>
+          <a
+            href="#services"
+            onClick={() => {
+              handler({
+                ...!stat,
+                Services: true,
+              });
+            }}
+          >
+            Services
+          </a>
         </li>
         <li className="button">
-          <a href="#blog">Blog</a>
+          <a
+            href="#blog"
+            onClick={() => {
+              handler({
+                ...!stat,
+                Blogs: true,
+              });
+            }}
+          >
+            Blog
+          </a>
         </li>
         <li className="button">
-          <a href="#clients">Our Clients</a>
+          <a
+            href="#clients"
+            onClick={() => {
+              handler({
+                ...!stat,
+                Clients: true,
+              });
+            }}
+          >
+            Our Clients
+          </a>
         </li>
         <li className="button">
-          <a href="#contact">Contact Us</a>
+          <a
+            href="#contact"
+            onClick={() => {
+              handler({
+                ...!stat,
+                Services: true,
+              });
+            }}
+          >
+            Contact Us
+          </a>
         </li>
       </ul>
     </nav>
