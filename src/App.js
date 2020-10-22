@@ -3,41 +3,20 @@ import { useState } from "react";
 
 import UserIn from "./components/UserIn.js";
 import Navbar from "./components/Navbar.js";
-import Home from "./components/Home.js";
-import Services from "./components/Services.js";
-import Blogs from "./components/Blogs.js";
-import OurClients from "./components/OurClients.js";
-import Contact from "./components/Contact.js";
+import Home from "./components/pages/Home.js";
+import Services from "./components/pages/Services.js";
+import Blogs from "./components/pages/Blogs.js";
+import OurClients from "./components/pages/OurClients.js";
+import Contact from "./components/pages/Contact.js";
+import Footer from "./components/Footer.js";
+
 import cardContent from "./content";
 import "./App.css";
 
 function App() {
-  // const [isHomeRender, setHome] = useState(true);
-  // const [isServicesRender, setServices] = useState(false);
-  // const [isBlogsRender, setBlogs] = useState(false);
-  // const [isClientsRender, setClients] = useState(false);
-  // const [isContactRender, setContact] = useState(false);
+  const [page, setPage] = useState("Home");
 
-  const [thisStat, setThisStat] = useState({
-    Home: true,
-    Services: false,
-    Blogs: false,
-    Clients: false,
-    Contact: false,
-  });
-
-  // const setHomeHandler = () => {
-  //   setHome(!isHomeRender);
-  //   setServices(false);
-  //   setBlogs(false);
-  //   setClients(false);
-  //   setContact(false);
-  // };
-  // const setServiceHandler = () => setServices(!isServicesRender);
-  // const setBlogHandler = () => setBlogs(!isBlogsRender);
-  // const setClientsHandler = () => setClients(!isClientsRender);
-  // const setContactHandler = () => setContact(!isContactRender);
-
+  const changePagehandler = (page) => setPage(page);
   return (
     <div className="App">
       <header className="App-header">
@@ -45,26 +24,27 @@ function App() {
           <a href="#home">
             <img src={"./images/sdl_logo_en.svg"} alt="logo-icon" />
           </a>
-          <Navbar stat={thisStat} handler={setThisStat} />
+          <Navbar currentPage={page} Pagehandler={changePagehandler} />
           <UserIn />
         </div>
       </header>
 
-      {/* Our components will update here */}
       <main className="App-main">
         {/* {isRender.map((comp) => {
           const objKey = Object.keys(comp)[0];
           const objVal = Object.values(comp)[0];
           return objVal ? <${objKey} /> : null;
         })} */}
-        {thisStat.Home ? <Home content={cardContent} /> : null}
-        {thisStat.Services ? <Services /> : null}
-        {thisStat.Blogs ? <Blogs /> : null}
-        {thisStat.Clients ? <OurClients /> : null}
-        {thisStat.Contact ? <Contact /> : null}
+        {page === "Home" && <Home content={cardContent} />}
+        {page === "Services" && <Services />}
+        {page === "Blogs" && <Blogs />}
+        {page === "Our Clients" && <OurClients />}
+        {page === "Contact Us" && <Contact />}
       </main>
 
-      <footer className="App-footer">This is footer</footer>
+      <footer className="app-footer">
+        <Footer />
+      </footer>
     </div>
   );
 }

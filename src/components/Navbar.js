@@ -1,75 +1,19 @@
 import React from "react";
 
-function Navbar({ stat, handler }) {
-  console.log(stat, handler);
+function Navbar({ currentPage, Pagehandler }) {
+  const pageList = ["Home", "Services", "Blogs", "Our Clients", "Contact Us"];
   return (
     <nav className="navigation" id="navigation">
       <ul>
-        <li className="button">
-          <a
-            href="#home"
-            onClick={() => {
-              handler({
-                ...!stat,
-                Home: true,
-              });
-            }}
-          >
-            Home
-          </a>
-        </li>
-        <li className="button">
-          <a
-            href="#services"
-            onClick={() => {
-              handler({
-                ...!stat,
-                Services: true,
-              });
-            }}
-          >
-            Services
-          </a>
-        </li>
-        <li className="button">
-          <a
-            href="#blog"
-            onClick={() => {
-              handler({
-                ...!stat,
-                Blogs: true,
-              });
-            }}
-          >
-            Blog
-          </a>
-        </li>
-        <li className="button">
-          <a
-            href="#clients"
-            onClick={() => {
-              handler({
-                ...!stat,
-                Clients: true,
-              });
-            }}
-          >
-            Our Clients
-          </a>
-        </li>
-        <li className="button">
-          <a
-            href="#contact"
-            onClick={() => {
-              handler({
-                ...!stat,
-                Services: true,
-              });
-            }}
-          >
-            Contact Us
-          </a>
-        </li>
+        {pageList.map((page, index) => {
+          return (
+            <li className="button" key={index}>
+              <a href={`#${page}`} onClick={() => Pagehandler(page)}>
+                {page}
+              </a>
+            </li>
+          );
+        })}
       </ul>
     </nav>
   );

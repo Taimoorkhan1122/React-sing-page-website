@@ -65,3 +65,42 @@ li a:hover {
     color: #3883e1
 }
 
+.App-main {
+    padding: 0 5px;
+    min-height: 100vh;
+}
+
+
+
+  
+.app-footer {
+    padding: 42px 0 0 0;
+    background-color: rgba(216, 216, 216, .24);
+}
+
+.footer-container {
+    max-width: 1230px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.footer__top {
+        padding: 0 0 70px 0;
+        border-bottom: .5px solid rgba(151, 151, 151, .2);
+}
+
+.footer__bottom {
+    font-size: 12px;
+    line-height: 15px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: row;
+    padding: 11px 0 30px;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
